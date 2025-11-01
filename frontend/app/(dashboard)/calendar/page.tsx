@@ -209,7 +209,7 @@
 
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import api from '@/lib/api';
 import { Event, ViewType, User, Task } from '@/types';
@@ -242,6 +242,23 @@ export default function CalendarPage() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [holidays, setHolidays] = useState<any[]>([]);
+
+//   const allCalendarItems = useMemo(() => {
+//     // 1. Transform holidays into the Event format
+//     const formattedHolidays: Event[] = holidays.map(holiday => ({
+//       _id: `holiday-${holiday.date}`, // Create a simple unique ID
+//       title: holiday.name,            // ASSUMPTION: holiday object has 'name'
+//       start: new Date(holiday.date),  // ASSUMPTION: holiday object has 'date'
+//       end: new Date(holiday.date),
+//       allDay: true, // Holidays are all-day events
+//       // Add any other properties your 'Event' type might require
+//       // e.g., color: 'green', type: 'holiday'
+//     }));
+
+//     // 2. Return the combined list of events and formatted holidays
+//     return [...events, ...formattedHolidays];
+
+//   }, [events, holidays]);
 
   useEffect(() => {
     // Check authentication
