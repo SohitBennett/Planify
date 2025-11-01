@@ -3,9 +3,17 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
+const { testEmailConfig } = require('./services/emailService');
+const { startReminderService } = require('./services/reminderService');
 
 // Connect to MongoDB
 connectDB();
+
+// Test email configuration on startup
+testEmailConfig();
+
+// Start reminder service
+startReminderService();
 
 const app = express();
 
@@ -17,6 +25,9 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/events', require('./routes/events'));
+app.use('/api/tasks', require('./routes/tasks'));
+app.use('/api/holidays', require('./routes/holidays'));
+
 
 // Health check route
 app.get('/api/health', (req, res) => {

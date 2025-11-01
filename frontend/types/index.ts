@@ -36,7 +36,20 @@ export interface AuthResponse {
   token: string;
 }
 
-export type ViewType = 'month' | 'week' | 'day';
+export interface Task {
+  _id: string;
+  user: string;
+  title: string;
+  description?: string;
+  dueDate?: string;
+  completed: boolean;
+  completedAt?: string;
+  priority: 'low' | 'medium' | 'high';
+  createdAt: string;
+  updatedAt: string;
+}
+
+export type ViewType = 'month' | 'week' | 'day' | 'year';
 
 export interface CalendarDate {
   date: Date;
