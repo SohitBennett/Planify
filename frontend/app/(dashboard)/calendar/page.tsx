@@ -309,6 +309,7 @@ export default function CalendarPage() {
     try {
       const year = currentDate.getFullYear();
       const response = await api.get(`/holidays/${year}`);
+      console.log("fetched holidays", response.data)
       setHolidays(response.data);
     } catch (error) {
       console.error('Error fetching holidays:', error);

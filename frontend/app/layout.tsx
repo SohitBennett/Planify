@@ -9,7 +9,14 @@ export const metadata: Metadata = {
   title: "Planify - Google Calendar Clone",
   description: "A clone Website of Google Calendar",
   icons: {
-    icon: "/logo_small.png", // or "/favicon.ico"
+    icon: "/logo_small.png",       // Main favicon
+    shortcut: "/logo_small.png",   // For older browsers
+    apple: "/logo_small.png",      // For Apple devices
+    // You can still use the light/dark mode array if you want:
+    // icon: [
+    //   { media: '(prefers-color-scheme: light)', url: '/logo_small.png' },
+    //   { media: '(prefers-color-scheme: dark)', url: '/logo_small.png' },
+    // ],
   },
 };
 
@@ -20,11 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/logo_small.png" type="image/png" />
-        <link rel="shortcut icon" href="/logo_small.png" />
-        <link rel="apple-touch-icon" href="/logo_small.png" />
-      </head>
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

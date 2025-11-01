@@ -127,7 +127,7 @@ export default function Sidebar({ isOpen, currentDate, onDateChange, onCreateEve
               </div>
             </div>
 
-            <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-accent cursor-pointer">
+            {/* <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-accent cursor-pointer">
               <Checkbox
                 checked={showTasks}
                 onCheckedChange={(checked) => setShowTasks(checked as boolean)}
@@ -136,7 +136,7 @@ export default function Sidebar({ isOpen, currentDate, onDateChange, onCreateEve
                 <div className="w-3 h-3 rounded-sm bg-green-500"></div>
                 <span className="text-sm">Tasks</span>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-accent cursor-pointer">
               <Checkbox
