@@ -18,7 +18,15 @@ startReminderService();
 const app = express();
 
 // Middleware
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,  // ✅ Loaded from .env
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+console.log("value of frontend from cors origin - ", process.env.FRONTEND_URL)
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
