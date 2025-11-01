@@ -267,9 +267,14 @@ export default function CalendarHeader({
           </Button>
           
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-background rounded-lg flex items-center justify-center border">
-              <span className="text-xl">📅</span>
-            </div>
+            {/* <div className="w-10 h-10 bg-background rounded-lg flex items-center justify-center border">
+              <span className="text-xl"></span>
+            </div> */}
+            <img 
+                src="/logo_small.png" 
+                alt="Planify Logo" 
+                className="w-10 h-10 rounded-md  object-contain" 
+            />
             <h1 className="text-xl font-semibold text-foreground hidden md:block">Planify</h1>
           </div>
 
